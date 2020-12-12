@@ -1,0 +1,14 @@
+# -*- coding: utf-8-unix -*-
+#+TITLE: Playground to learn and understand Git Version Control
+
+** Learning GIT by studying The Three Sources
+ - [[https://alexwlchan.net/a-plumbers-guide-to-git/][A Plumber’s Guide to Git]],
+   - the Git object store
+   - the Idea of trees
+   - the commits
+   - the labels
+ - [[man:git-push][man git-push]]
+   - Note about fast-forwards
+ - [[https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified][The Three Trees]]
+   - Git being a content manager of three different trees
+   
