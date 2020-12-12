@@ -59,10 +59,19 @@
 
    It took a long time till I understood why I need to run ~git add~
    after I did ~git merge~.
+   Right from the beginning (coming from other source control management systems)
+   I understood: with ~git add~ I put a file under source control, that's it.
+   So why shall I put a file "again" under source control when I did a merge?
+   
    And also to understand why I need to run ~git commit~ with option ~--all~
    to commit all changed files.
-   I could have called simply ~git commit~ I would had run ~git-add~ before.
-   Right from the beginning (coming from other source control managment systems)
-   I understood: with ~git add~ I put a file under source control, that's it.
-   So why shall I put a file "again" after source control when I did a merge?
+   I could have called simply ~git commit~
+   when I would had run ~git-add~ for all changed files before.
+   Again why shall I put a file "again" under source control when I changed it?
+
+   What are all these activities good for, let's visit between the Three Trees
+   - to stage
+   - to commit
+   - to stash
+
    
