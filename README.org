@@ -2,13 +2,67 @@
 #+TITLE: Playground to learn and understand Git Version Control
 
 ** Learning GIT by studying The Three Sources
- - [[https://alexwlchan.net/a-plumbers-guide-to-git/][A Plumber’s Guide to Git]],
-   - the Git object store
-   - the Idea of trees
-   - the commits
-   - the labels
- - [[man:git-push][man git-push]]
-   - Note about fast-forwards
- - [[https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified][The Three Trees]]
-   - Git being a content manager of three different trees
+   - [[https://alexwlchan.net/a-plumbers-guide-to-git/][A Plumber’s Guide to Git]],
+     - the Git object store
+     - the Idea of trees
+     - the commits
+     - the labels
+   - [[https://manpages.debian.org/buster/git-man/git-push.1.en.html][man git-push]]
+     - Note about fast-forwards
+   - [[https://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified][The Three Trees]]
+     - Git being a content manager of three different trees
+
+
+** [2020-12-12 Sa] Reproduce Fatal Error with Github in Repo play-jupyter
+
+   Wanted to reproduce and document the git experience here I did some time ago
+   with [[https://github.com/tilofix/play-jupyter#learning-git-by-doing-a-plumbers-guide-to-git-and-man-git-push][my repo play-jupyter]] at Github.
+
+   I couldn't! Because meantime Github changed [[https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-branches#about-the-default-branch][default branch name]].
+   Or at least in my new repo play-git it started with ~main~,
+   whereas locally it started with ~master~.
+   So I've got two branches and no conflict and no fatal error.
+
+   #+BEGIN_EXAMPLE
+     ,* master                b436786 initial commit with 3 items to be documented
+       remotes/github/main   d9417c6 Initial commit
+       remotes/github/master b436786 initial commit with 3 items to be documented
+   #+END_EXAMPLE
+
+** Git Under the Hood
+
+   Never heart of [[https://en.wikipedia.org/wiki/Merkle_tree][Merkel Trees]] before I learnt "Blockchain" technology.
+   When a "Blockchain" is a "Merkel Chain" of "blocks" 
+   then a Git repository is a "Merkel Tree" of "commits" objects
+   - referencing a tree object, a parent commit object,
+   - and has an author, a committer, as well as a log message.
+   A tree object references blob objects and
+   has file modes and file names.
+
+   Why not utilizing Git as a Blockchain, others had this idea already:
+   [[https://www.youtube.com/watch?v=k7U-V4EwoP8][Git as Blockchain - Michael Perry]]. Interesting Talk, isn't it?
+
+   #+begin_quote
+   In Git, it's a shared repository; in blockchain, a distributed ledger.
+   Where Git has commits, blockchain has blocks.
+   Git uses SHA, and so does blockchain.
+   Discover how blockchain technology actually works by building a blockchain using Git.
+   Along the way, you'll discover features such as:
+   - Wallets
+   - Proof of work
+   - Mining
+   - 51% attack
+   #+end_quote
+
+     
+** The Three Trees
+
+   It took a long time till I understood why I need to run ~git add~
+   after I did ~git merge~.
+   And also to understand why I need to run ~git commit~ with option ~--all~
+   to commit all changed files.
+   I could have called simply ~git commit~ I would had run ~git-add~ before.
+   Right from the beginning (coming from other source control managment systems)
+   I understood: with ~git add~ I put a file under source control, that's it.
+   So why shall I put a file "again" after source control when I did a merge?
    
